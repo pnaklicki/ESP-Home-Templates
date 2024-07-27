@@ -78,12 +78,12 @@ packages:
       - standard/diagnostics.yaml
       - standard/wifi.yaml
       - standard/internaltemp.yaml
+      - standard/board.yaml
   sonoffm5_package:
     url: https://github.com/pnaklicki/ESP-Home-Templates/Sonoff/
     ref: main
     refresh: 0d
     files:
-      - M5/board.yaml 
       - M5/timings.yaml
       - M5/status-led.yaml
       - M5/backlight.yaml

@@ -35,3 +35,4 @@ packages:
       - standard/diagnostics.yaml
       - standard/wifi.yaml
       - standard/internaltemp.yaml
+      - standard/board.yaml
