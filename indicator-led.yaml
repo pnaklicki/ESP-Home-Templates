@@ -1,0 +1,15 @@
+# NOTE: This file is not a stand-alone package. It is part of
+# a 'root' device template and expects the substitutions that
+# are hereby referenced to be defined by its parent.
+
+# Allow importing this package
+dashboard_import:
+  package_import_url: "github://mariodivece/esphometemplates/sonoff-m5/indicator-led.yaml@main"
+  import_full_config: false
+
+switch:
+  # Physical indicator of the relay
+  - platform: gpio
+    id: led_indicator
+    internal: true
+    pin: ${led_indicator_gpio}
