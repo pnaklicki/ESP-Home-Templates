@@ -1,0 +1,34 @@
+# Basic code for new ESP Home devices
+
+substitutions:
+  # User-required substitutions
+  device_site: "home"
+  device_location_code: "bedroom01"
+  device_location_name: "Bedroom 1"
+  device_type_code: "wasw"
+  device_type_name: "Wall Switch"
+  device_number: "044"
+  device_ip: "0.0.0.0"
+
+  # Project Substitutions (not intended for user substitution)
+  device_model: "Device Model"
+  device_make: "Device Make"
+  package_version: "1"
+  package_url: "github://pnaklicki/ESP-Home-Templates/esp.yaml@main"
+
+# Allow importing this package
+dashboard_import:
+  package_import_url: ${package_url}
+  import_full_config: false
+
+# Import packages
+packages:
+  standard_package:
+    url: https://github.com/pnaklicki/ESP-Home-Templates/
+    ref: main
+    refresh: 0d
+    files:
+      - standard/project.yaml
+      - standard/diagnostics.yaml
+      - standard/wifi.yaml
+      - standard/internaltemp.yaml
