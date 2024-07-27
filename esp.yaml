@@ -1,5 +1,8 @@
 # Basic code for new ESP Home devices
 
+# Uncomment to enable bluetooth proxy
+# bluetooth_proxy:
+
 substitutions:
   # User-required substitutions
   device_site: "home"
