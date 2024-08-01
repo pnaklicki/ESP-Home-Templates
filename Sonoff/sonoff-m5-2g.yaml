@@ -39,11 +39,11 @@
 substitutions:
   # User-required substitutions
   device_site: "home"
-  device_location_code: "bedroom01"
-  device_location_name: "Bedroom 1"
+  device_location_code: "livingroom"
+  device_location_name: "Living Room"
   device_type_code: "wasw"
   device_type_name: "Wall Switch"
-  device_number: "044"
+  device_number: "1"
   device_ip: "0.0.0.0"
 
   # Project Substitutions (not intended for user substitution)
@@ -81,20 +81,20 @@ packages:
       - standard/internaltemp.yaml
       - standard/board.yaml
   sonoffm5_package:
-    url: https://github.com/pnaklicki/ESP-Home-Templates/Sonoff/
+    url: https://github.com/pnaklicki/ESP-Home-Templates/
     ref: main
     refresh: 0d
     files:
-      - M5/timings.yaml
-      - M5/status-led.yaml
-      - M5/backlight.yaml
-      - M5/indicator-led.yaml
-      - M5/mode-button-a.yaml
-      - M5/relay-a.yaml
-      - M5/button-a.yaml
-      - M5/mode-button-b.yaml
-      - M5/relay-b.yaml
-      - M5/button-b.yaml
+      - Sonoff/M5/timings.yaml
+      - Sonoff/M5/status-led.yaml
+      - Sonoff/M5/backlight.yaml
+      - Sonoff/M5/indicator-led.yaml
+      - Sonoff/M5/mode-button-a.yaml
+      - Sonoff/M5/relay-a.yaml
+      - Sonoff/M5/button-a.yaml
+      - Sonoff/M5/mode-button-b.yaml
+      - Sonoff/M5/relay-b.yaml
+      - Sonoff/M5/button-b.yaml
 
 switch:
     
