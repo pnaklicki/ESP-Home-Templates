@@ -53,33 +53,6 @@ sensor:
     entity_category: "diagnostic"
     disabled_by_default: true
 
-  # Captures the uptime and updates the human-readable
-  # text sensor displayed. This is an internal sensor only.
-  - platform: uptime
-    name: "Uptime"
-    id: sensor_uptime
-    update_interval: 60s
-    entity_category: "diagnostic"
-    internal: true
-    on_raw_value:
-      then:
-        - text_sensor.template.publish:
-            id: uptime_human
-            state: !lambda |-
-              int seconds = round(id(sensor_uptime).raw_state);
-              int days = seconds / (24 * 3600);
-              seconds = seconds % (24 * 3600);
-              int hours = seconds / 3600;
-              seconds = seconds % 3600;
-              int minutes = seconds /  60;
-              seconds = seconds % 60;
-              return (
-                (days ? String(days) + "d " : "") +
-                (hours ? String(hours) + "h " : "") +
-                (minutes ? String(minutes) + "m " : "") +
-                (String(seconds) + "s")
-              ).c_str();
-
 # Provide a pre-built button for restarting the device
 button:
   - platform: restart
@@ -87,11 +60,4 @@ button:
     id: button_restart
     icon: mdi:power-cycle
     entity_category: "diagnostic"
-
-  # Provide a button to reset all defined flash settings.
-  - platform: factory_reset
-    disabled_by_default: false
-    name: "Load Factory Settings"
-    id: factory_reset_all
-    icon: mdi:factory
     
