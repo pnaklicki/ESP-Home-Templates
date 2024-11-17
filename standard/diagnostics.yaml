@@ -5,6 +5,8 @@
 substitutions:
   timezone: "Europe/Warsaw"
 
+logger:
+
 # Provide date and time
 time:
   - platform: sntp
