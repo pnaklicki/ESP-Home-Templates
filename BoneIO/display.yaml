@@ -67,27 +67,23 @@ binary_sensor:
       inverted: true
     on_press:
       then:
-        # woke up when on the screensaver, as well do not include the logo page and screensaver in a loop when pushing a button
         - if:
             condition:
-              # on the last page go to the first page skipping the screensaver and logo page
               display.is_displaying_page: last_page
             then:
+              - logger.log: "Last page, going to first_page"
               - display.page.show: first_page
-              - component.update: oled_display
             else:
               - if:
                   condition:
-                    # on the screensaver, show the logo for a while and display the first page
                     display.is_displaying_page: screensaver
                   then:
+                    - logger.log: "On screensaver, going to first_page"
                     - display.page.show: first_page
-                    - component.update: oled_display
                   else:
-                    # not the last page and screensaver go to the next page
+                    - logger.log: "Switching to the next page"
                     - display.page.show_next: oled_display
-                    - component.update: oled_display
-          # restart screensaver script
+        - component.update: oled_display
         - script.execute: screensaver_script
 
 display:
