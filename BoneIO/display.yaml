@@ -107,7 +107,9 @@ display:
           it.printf(124, 49, id(size_10), TextAlign::BASELINE_RIGHT ,"%s", id(wt32_uptime).state.c_str());
           it.printf(4, 61, id(size_10), TextAlign::BASELINE_LEFT ,"Temperature:");
           it.printf(124, 61, id(size_10), TextAlign::BASELINE_RIGHT ,"%.2f°C", id(boneIO_temp).state);
-      # additional pages should be defined between the first and last page
+      - lambda: |-
+          it.rectangle(0, 0, 126, 15);
+          it.printf(64,11, id(size_10), TextAlign::BASELINE_CENTER, "Tymuś");
       - id: last_page
         lambda: |-
           it.rectangle(0, 0, 126, 15);
@@ -126,5 +128,8 @@ display:
 
 font:
   - file: 'gfonts://Ubuntu'
+    glyphsets: [
+      'GF_LATIN_CORE
+    ]
     id: size_10
     size: 10
