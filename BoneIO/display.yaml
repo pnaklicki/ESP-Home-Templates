@@ -126,7 +126,7 @@ display:
 font:
   - file: 'gfonts://Ubuntu'
     glyphsets: [
-      'GF_LATIN_CORE
+      'GF_LATIN_CORE'
     ]
     id: size_10
     size: 10
