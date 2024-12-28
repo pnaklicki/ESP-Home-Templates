@@ -94,7 +94,7 @@ display:
     contrast: 0.5
     pages: 
       - id: first_page
-          lambda: |-
+        lambda: |-
              it.rectangle(0, 0, 126, 15);
              it.printf(64,11, id(size_10), TextAlign::BASELINE_CENTER, "Tytuś");
              it.printf(4, 37, id(size_10), TextAlign::BASELINE_LEFT ,"IP addr:");
