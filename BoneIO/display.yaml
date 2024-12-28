@@ -92,35 +92,7 @@ display:
     model: 'SH1106 128x64'
     address: 0x3C
     contrast: 0.5
-    pages:
-      - id: first_page
-        lambda: |-
-          it.rectangle(0, 0, 126, 15);
-          it.printf(64,11, id(size_10), TextAlign::BASELINE_CENTER, "Tytuś");
-          it.printf(4, 37, id(size_10), TextAlign::BASELINE_LEFT ,"IP addr:");
-          it.printf(124, 37, id(size_10), TextAlign::BASELINE_RIGHT ,"%s", id(ip_address).state.c_str());
-          it.printf(4, 49, id(size_10), TextAlign::BASELINE_LEFT ,"Uptime:");
-          it.printf(124, 49, id(size_10), TextAlign::BASELINE_RIGHT ,"%s", id(wt32_uptime).state.c_str());
-          it.printf(4, 61, id(size_10), TextAlign::BASELINE_LEFT ,"Temperature:");
-          it.printf(124, 61, id(size_10), TextAlign::BASELINE_RIGHT ,"%.2f°C", id(boneIO_temp).state);
-          
-      ${display_pages}
-      
-      - id: last_page
-        lambda: |-
-          it.rectangle(0, 0, 126, 15);
-          it.printf(64,11, id(size_10), TextAlign::BASELINE_CENTER, "bone IO");
-          it.printf(4, 25, id(size_10), TextAlign::BASELINE_LEFT ,"Current:");
-          it.printf(124, 25, id(size_10), TextAlign::BASELINE_RIGHT ,"%.3fA", id(ina_current).state);
-          it.printf(4, 37, id(size_10), TextAlign::BASELINE_LEFT ,"Power:");
-          it.printf(124, 37, id(size_10), TextAlign::BASELINE_RIGHT ,"%.2fW", id(ina_power).state);
-          it.printf(4, 49, id(size_10), TextAlign::BASELINE_LEFT ,"Bus Volt:");
-          it.printf(124, 49, id(size_10), TextAlign::BASELINE_RIGHT ,"%.2fV", id(ina_bus_voltage).state);
-          it.printf(4, 61, id(size_10), TextAlign::BASELINE_LEFT ,"Shunt Volt:");
-          it.printf(124, 61, id(size_10), TextAlign::BASELINE_RIGHT ,"%.2fV", id(ina_shunt_voltage).state);
-      - id: screensaver
-        lambda: |-
-          it.fill(COLOR_OFF);
+    pages: !include boneio-32x10-display-pages.yaml
 
 font:
   - file: 'gfonts://Ubuntu'
